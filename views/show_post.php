@@ -1,30 +1,45 @@
-
-<h1> <?php echo $data['post'] -> title; ?></h1>
 <?php if($data['post'] ->photo): ?>
-<div class="cover">
-    <img src="<?php echo $data['post']->photo; ?>" alt="" width="600" height="400">
-</div>
-<?php endif; ?>
-<?php if($data['post']->body): ?>
-    <div class="content">
-        <?php echo 'Description : '.$data['post']->body;?>
+<header class="intro-header" style="background-image: url('<?php echo $data['post']->photo; ?>')">
+    <?php endif;?>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1><?php echo $data['post'] -> title; ?></h1>
+                    <?php if($data['post']->author): ?>
+                    <h2 class="subheading">Authors&nbsp;:&nbsp;<?php echo $data['post']->author;?> </h2>
+                    <?php endif;?>
+                    <?php if($data['categories']): ?>
+                    <?php foreach($data['categories'] as $category) : ?>
+                        <h2><a href="?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo $category->name;?></a></h2>
+                    <?php endforeach; ?>
+                    <?php endif;?>
+
+                    <?php if($data['post']->created_at): ?>
+                    <span class="meta">Posted on <?php echo $data['post']->created_at;?></span>
+                    <?php endif;?>
+                </div>
+            </div>
+        </div>
     </div>
-<?php endif; ?>
-<?php if($data['post']->source): ?>
-    <div class="source">
-        <a href="<?php echo $data['post']->source;?>">Site internet de la source </a>
-    </div>
-<?php endif; ?>
-<?php if($data['post']->created_at): ?>
-    <div class="content">
-        <?php echo 'Date de création : '.$data['post']->created_at;?>
-    </div>
-<?php endif; ?>
-<?php if($data['post']->author): ?>
-    <div class="content">
-        <?php echo 'Auteur : '.$data['post']->author;?>
-    </div>
-<?php endif; ?>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <?php if($data['post']->body): ?>
+                <p><?php echo $data['post']->body;?></p>
+                <?php endif;?>
+
+                <?php if($data['post']->source): ?>
+                <a href="<?php echo $data['post']->source;?>">Lien vers Wikipedia</a>
+                <?php endif;?>
+
+                </div>
+            </div>
+        </div>
+    </article>
 
 <?php if($data['comments']): ?>
     <h2>Commentaires&nbsp;:</h2>
@@ -42,9 +57,9 @@
     <h2>Catégorie&nbsp;:</h2>
     <ul class="catégories">
         <?php foreach($data['categories'] as $category) : ?>
-            <li class="comments">
+
                 <a href="?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo $category->name;?></a>
-            </li>
+
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>

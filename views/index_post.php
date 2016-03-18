@@ -5,23 +5,32 @@
  * Date: 19/03/16
  */
  -->
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Dylan Schirino</h1>
+                    <hr class="small">
+                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <?php foreach($data['post'] as $post): ?>
             <div class="post-preview">
-                <a href="post.html">
+                <a href="<?php echo $_SERVER['PHP_SELF']?>?a=show&e=post&id=<?php echo $post->id;?>&with=comments,categories">
                     <h2 class="post-title">
-                        Man must explore, and this is exploration at its greatest
+                        <?php echo $post->title;?>
                     </h2>
-                    <h3 class="post-subtitle">
-                        Problems look mighty small from 150 miles up
-                    </h3>
+
                 </a>
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                <p class="post-meta">Posted by <?php echo $post->author;?> on <?php echo $post->created_at;?></p>
             </div>
-            <hr>
-<ul>
-    <?php foreach($data['post'] as $post): ?>
-    <li><a href="<?php echo $_SERVER['PHP_SELF']?>?a=show&e=post&id=<?php echo $post->id;?>&with=comments,categories"><?php echo $post->title;?></a></li>
-<?php endforeach; ?>
-</ul>
+                <hr>
+            <?php endforeach; ?>
+
