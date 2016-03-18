@@ -8,6 +8,6 @@
  -->
 <ul>
     <?php foreach($data['categories'] as $category): ?>
-    <li><a href="<?php echo $_SERVER['PHP_SELF']?>?a=show&e=categories&id=<?php echo $category->id;?>"><?php echo $category->name;?></a></li>
+    <li><a href="<?php echo $_SERVER['PHP_SELF']?>?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo $category->name;?></a></li>
 <?php endforeach; ?>
 </ul>

@@ -32,16 +32,16 @@ class CategoriesController
             $view = 'show_categories.php';
             $page_title='Les articles correspondant&nbsp;: '.$categorie->name;
 
-            $posts = null;
+            $post = null;
             if (isset($_GET['with'])){  //on regarde si la clé with existe si oui on explose sont contenu
                 $with = explode(',',$_GET['with']);
-                if(in_array('posts',$with)){ //on verifie si le mots authors est dans le tableau
-                    $posts_model = new Post(); // on crée un nouveau model des auteurs
-                    $posts = $posts_model->getPostsByCategoriesId($categorie->id);
+                if(in_array('post',$with)){ //on verifie si le mots authors est dans le tableau
+                    $post_model = new Post(); // on crée un nouveau model des auteurs
+                    $post = $post_model->getPostByCategoriesId($categorie->id);
                 }
 
             }
-            return ['categorie' => $categorie, 'view' => $view,'page_title'=>$page_title,'posts'=>$posts];
+            return ['categorie' => $categorie, 'view' => $view,'page_title'=>$page_title,'post'=>$post];
 
         } else {
             die('ERREUR 404 NOT FOUND');

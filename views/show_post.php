@@ -38,12 +38,12 @@
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
-<?php if($data['comments']): ?>
+<?php if($data['categories']): ?>
     <h2>Catégorie&nbsp;:</h2>
     <ul class="catégories">
         <?php foreach($data['categories'] as $category) : ?>
             <li class="comments">
-                <a href="<?php echo $category->name;?>"><?php echo $category->name;?></a>
+                <a href="?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo $category->name;?></a>
             </li>
         <?php endforeach; ?>
     </ul>
