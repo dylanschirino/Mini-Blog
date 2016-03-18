@@ -37,7 +37,7 @@ class Model
 
     public function all()
     {
-        $sql = sprintf('SELECT * FROM %s ORDER BY created_at DESC ',$this->table);
+        $sql = sprintf('SELECT * FROM %s ORDER BY id DESC ',$this->table);
         $pdoSt = $this->connection->query($sql);//on mets dans une variable pdo la requete puis on la mets dans $books pour la fecther, la recuperer
         return $pdoSt->fetchAll();// pour recuper les lignes de la base de données
 
