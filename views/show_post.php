@@ -11,7 +11,7 @@
                     <?php endif;?>
                     <?php if($data['categories']): ?>
                     <?php foreach($data['categories'] as $category) : ?>
-                        <h2><a href="?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo $category->name;?></a></h2>
+                        <h2><a href="?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo 'Categories&nbsp:&nbsp;'.$category->name;?></a></h2>
                     <?php endforeach; ?>
                     <?php endif;?>
 
@@ -35,33 +35,23 @@
                 <?php if($data['post']->source): ?>
                 <a href="<?php echo $data['post']->source;?>">Lien vers Wikipedia</a>
                 <?php endif;?>
-
                 </div>
             </div>
+        <hr>
+        <?php if($data['comments']): ?>
+        <?php foreach($data['comments'] as $comment) : ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $comment->author;?></h3>
+                <time><?php echo $comment->created_at;?></time>
+            </div>
+
+            <div class="panel-body">
+                <p><p><?php echo $comment->body;?></p></p>
+            </div>
+        </div>
+        <?php endforeach; ?>
+        <?php endif; ?>
         </div>
     </article>
-
-<?php if($data['comments']): ?>
-    <h2>Commentaires&nbsp;:</h2>
-    <ul class="commentaires">
-        <?php foreach($data['comments'] as $comment) : ?>
-            <li class="comments">
-                <time><?php echo $comment->created_at;?></time>
-                <p><?php echo $comment->author;?></p>
-                <p><?php echo $comment->body;?></p>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-<?php if($data['categories']): ?>
-    <h2>Catégorie&nbsp;:</h2>
-    <ul class="catégories">
-        <?php foreach($data['categories'] as $category) : ?>
-
-                <a href="?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo $category->name;?></a>
-
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-
 

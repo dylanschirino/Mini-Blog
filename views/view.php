@@ -5,6 +5,7 @@
         <title><?php echo $data['page_title'];?></title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/clean-blog.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
     <?php include ('partials/_main_navigation.php'); ?>
