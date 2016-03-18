@@ -45,7 +45,7 @@ class Model
 
     public function find($id)
     {
-        $sql = sprintf('SELECT * FROM %s WHERE id = :id',$this->table); //on récupere un livre en particulier sur base de son ID
+        $sql = sprintf('SELECT * FROM %s WHERE id = :id ',$this->table); //on récupere un livre en particulier sur base de son ID
         $pdoSt = $this->connection->prepare($sql);
         $pdoSt->execute([':id' => $id]);// on execute en remplacant par la valeur recupere dans l'url de $id
         return $pdoSt->fetch();

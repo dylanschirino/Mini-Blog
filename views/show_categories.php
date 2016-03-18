@@ -26,27 +26,6 @@
     </div>
 <?php endif; ?>
 
-<?php if($data['comments']): ?>
-    <h2>Commentaires&nbsp;:</h2>
-    <ul class="commentaires">
-        <?php foreach($data['comments'] as $comment) : ?>
-            <li class="comments">
-                <time><?php echo $comment->created_at;?></time>
-                <p><?php echo $comment->author;?></p>
-                <p><?php echo $comment->body;?></p>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-<?php if($data['comments']): ?>
-    <h2>Catégorie&nbsp;:</h2>
-    <ul class="catégories">
-        <?php foreach($data['categories'] as $category) : ?>
-            <li class="comments">
-                <a href="<?php echo $category->name;?>"><?php echo $category->name;?></a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
+
 
 

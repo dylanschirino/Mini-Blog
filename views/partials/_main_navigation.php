@@ -9,7 +9,7 @@
 <nav>
     <h2>Catégorie</h2>
     <div>
-        <a href="?a=index&e=categories">Design Web</a>
-        <a href="?a=index&e=categories">Programmation</a>
+        <a href="?a=index&e=post">Tout les Articles</a>
+        <a href="?a=index&e=categories">Catégorie</a>
     </div>
 </nav>

@@ -1,14 +1,22 @@
 <?php
 /**
- * File: Post.php
+ * File: Categories.php
  * User: Dylan Schirino
- * Date: 5/03/16
- * Time: 11:00
+ * Date: 18/03/16
+ * Time: 12:11
  */
 namespace Model;
 
-class Post extends Model
+class Categories extends Model
 {
-    protected $table ='post';
+    protected $table ='categories';
+
+    public function getCategoriesByPostId($id){
+        $sql = 'SELECT categories.* FROM categories JOIN post ON categories.id=post.id_category WHERE post.id=:id
+        ';
+        $pdoSt = $this->connection->prepare($sql);
+        $pdoSt->execute(['id'=>$id]);
+        return $pdoSt->fetchAll();
+    }
 
 }

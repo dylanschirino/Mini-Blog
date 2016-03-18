@@ -8,6 +8,7 @@
 namespace Controller;
 
 
+use Model\Categories;
 use Model\Comments;
 use Model\Post;
 
@@ -45,8 +46,16 @@ class PostController
                     $comments = $comments_model->getCommentsByPostId($post->id);
                 }
             }
+            $categories = null;
+            if (isset($_GET['with'])) {  //on regarde si la clé with existe si oui on explose sont contenu
+                $with = explode(',', $_GET['with']);
+                if (in_array('categories', $with)) { //on verifie si le mots authors est dans le tableau
+                    $categories_model = new Categories(); // on crée un nouveau model des auteurs
+                    $categories = $categories_model->getCategoriesByPostId($post->id);
+                }
+            }
 
-            return ['post' => $post, 'view' => $view,'page_title'=>$page_title,'comments'=>$comments];
+            return ['post' => $post, 'view' => $view,'page_title'=>$page_title,'comments'=>$comments,'categories'=>$categories];
         } else {
             die('il manque un identifiant a votre livre');
         }

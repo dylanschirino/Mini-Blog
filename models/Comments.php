@@ -9,7 +9,7 @@ namespace Model;
 
 class Comments extends Model
 {
-    protected $table ='blog';
+    protected $table ='comment';
 
     public function getCommentsByPostId($id){
         $sql = 'SELECT comment.* FROM comment JOIN post ON post.id=comment.id_post WHERE post.id=:id

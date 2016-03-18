@@ -16,7 +16,7 @@ class CategoriesController
 
     function index()
     {
-        $categories =$this->categorie_model->all();
+        $categories =$this->categories_model->all();
         $view = 'index_categories.php';
         $page_title='Catégorie : ';
         return ['categories' => $categories, 'view' => $view,'page_title'=>$page_title];
