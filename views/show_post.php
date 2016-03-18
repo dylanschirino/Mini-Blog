@@ -5,6 +5,8 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
+                    <br>
+                    <br>
                     <h1><?php echo $data['post'] -> title; ?></h1>
                     <?php if($data['post']->author): ?>
                     <h2 class="subheading">Authors&nbsp;:&nbsp;<?php echo $data['post']->author;?> </h2>
@@ -18,6 +20,7 @@
                     <?php if($data['post']->created_at): ?>
                     <span class="meta">Posted on <?php echo $data['post']->created_at;?></span>
                     <?php endif;?>
+
                 </div>
             </div>
         </div>
