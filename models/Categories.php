@@ -3,7 +3,6 @@
  * File: Categories.php
  * User: Dylan Schirino
  * Date: 18/03/16
- * Time: 12:11
  */
 namespace Model;
 

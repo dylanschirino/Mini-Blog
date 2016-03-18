@@ -2,8 +2,7 @@
 /**
  * File: routes.php
  * User: Dylan Schirino
- * Date: 3/03/16
- * Time: 16:56
+ * Date: 18/03/16
  */
     $routes = [
         'default' => 'index_post',

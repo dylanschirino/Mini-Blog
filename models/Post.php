@@ -2,8 +2,7 @@
 /**
  * File: Post.php
  * User: Dylan Schirino
- * Date: 5/03/16
- * Time: 11:00
+ * Date: 18/03/16
  */
 namespace Model;
 

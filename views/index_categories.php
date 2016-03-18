@@ -1,9 +1,8 @@
 <!--
 /**
- * File: index_post.php
+ * File: index_categories.php
  * User: Dylan Schirino
- * Date: 5/03/16
- * Time: 11:04
+ * Date: 18/03/16
  */
  -->
 <ul>
