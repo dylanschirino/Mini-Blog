@@ -11,9 +11,9 @@
                     <?php if($data['post']->author): ?>
                     <h2 class="subheading">Authors&nbsp;:&nbsp;<?php echo $data['post']->author;?> </h2>
                     <?php endif;?>
-                    <?php if($data['categories']): ?>
-                    <?php foreach($data['categories'] as $category) : ?>
-                        <h2><a href="?a=show&e=categories&id=<?php echo $category->id;?>&with=post"><?php echo 'Categories&nbsp:&nbsp;'.$category->name;?></a></h2>
+                    <?php if($data['category']): ?>
+                    <?php foreach($data['category'] as $category) : ?>
+                        <h2><a href="?a=show&e=post&id=<?php echo $category->id;?>&with=post"><?php echo 'Categories&nbsp:&nbsp;'.$category->name;?></a></h2>
                     <?php endforeach; ?>
                     <?php endif;?>
 

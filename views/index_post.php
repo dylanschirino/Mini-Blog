@@ -33,4 +33,15 @@
             </div>
                 <hr>
             <?php endforeach; ?>
+            <?php foreach($data['category'] as $category): ?>
+                <div class="post-preview">
+                    <a href="?a=index&e=post&id=<?php echo $category->id;?>&with=category">
+                        <h2 class="post-title">
+                            <?php echo $category->name;?>
+                        </h2>
+
+                    </a>
+                </div>
+                <hr>
+            <?php endforeach; ?>
 

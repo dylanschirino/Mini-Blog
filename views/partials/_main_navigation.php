@@ -24,8 +24,23 @@
                 <li>
                     <a href="?a=index&e=post">Tout les Articles</a>
                 </li>
-                <li>
-                    <a href="?a=index&e=categories">Catégories</a>
+                <li class="liste-deroulant">
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="?a=index&e=post&with=categories" class="lien-deroulant">Catégories</a>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <?php foreach($data['category'] as $category): ?>
+                            <li>
+                                <a href="?a=index&e=post&id=<?php echo $category->id;?>&with=category">
+                                        <?php echo $category->name;?>
+                                    </a>
+                            </li>
+                                <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </div>
